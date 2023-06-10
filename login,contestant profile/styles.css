@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  font: size 40px;
+  color: rgb(192, 168, 214)
+}
+
+.profile {
+  border: 2px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  
+}
+
+.profile img {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+
+.profile h2 {
+  text-align: center;
+  font: size 16px;
+  margin-top: 10px;
+  color:antiquewhite
+}
+
+.profile p {
+  text-align: center;
+  font: size 13px;
+  margin-top: 5px;
+  color:aqua
+}
+
+.profile video {
+  width: 576px;
+  height: 576px;
+  display: block;
+  margin: 50px auto;
+  
+ 
+}

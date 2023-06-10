@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sing-Off voting platform</title>
+    <link rel= "stylesheet" href='../header/header.css'>
+    <link rel="stylesheet" href="../header/footer.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+    <header>
+        <table style="width: 100%;">
+         <div class="div2" >
+            <tr style="height: 150px;">
+            <td id="logo_img"><img src="../header/My project-1 (1).png" id = "logo_img"></td>
+            <td id="header_text">
+            <h1 style="font-size: 50px;">SING-OFF!!</h1>
+            <h2 style="font-size: xx-large;"> Online voting platform</h2>
+            </td>
+            </tr>
+        </div>
+        </table>
+    </header>
+    <body>            
+        <div id="navbar" style="font-family: Arial, Helvetica, sans-serif;">
+            <table width="100%">
+                <tr>
+                <td class="td1"><a href="../homepage/homepage.html"> <b>HOME</b></a></td>
+                <td class="td1"> <a href="../contactus,faq,vote/finalcontactus.html"><b>CONTACT US</b></a></td>
+                <td class="td1">
+                    <div class="dropdown">
+                        <button class="dropbtn"><b>ACCOUNTS</b></button>
+                    <div class="dropdown-content">
+                    <ul>
+                       <li><a href="#">Contestant</a></li>
+                       <li><a href="#">My Profile</a></li>
+                       <li><a href="#">Admin</a></li>
+                    </ul>
+                    </div>
+                    </div> 
+                </td>
+                <td class="td1">
+                    <div class="dropdown">
+                        <button class="dropbtn"><b>MORE</b></button>
+                        <div class="dropdown-content">
+                            <ul>
+                                <li><a href="../contactus,faq,vote/finalvote.html">Vote now!</a></li>
+                                <li><a href="../Results page/results.html">View Results</a></li>
+                                <li><a href="../contactus,faq,vote/finalfaq.html">FAQ's</a></li>
+                                <li><a href="../user account,rules & regulations/rules.html">Rules and Regulations</a></li>
+                                <li><a href="../registration,time schedule/Time shedule.html">What's next?</a></li>
+                            </ul>
+                        </div>
+                    </div> 
+                </td>
+                <td style="empty-cells:hide; width: 600px;"></td>
+                <td><i class='fas fa-user-cog' style="color: white; font-size: 50px;"><h1 style="font-size: large;">Admin</h1></i></td>
+                </tr>
+            </table>
+        </div>
+
+        <script>
+            window.onscroll = function() {myFunction()};
+
+            var navbar = document.getElementById("navbar");
+            var sticky = navbar.offsetTop;
+
+            function myFunction(){
+                if(window.pageYOffset >= sticky){
+                    navbar.classList.add("sticky")
+                } else {
+                    navbar.classList.remove("sticky");
+                }
+            }
+        </script>
+        <script src='https://cdn.jsdelivr.net/countupjs/1.8.5/countUp.min.js'></script>
+        <script src='https://cdn.rawgit.com/toddmotto/foreach/e82a4fed997593820ae65a09a35068b696bf10a0/dist/foreach.min.js'></script>
+        <script src='https://cdn.rawgit.com/imakewebthings/waypoints/d21e1690bb5f407de4bf0bd9f08d967cf2027424/lib/noframework.waypoints.js'></script>
+        <script src='https://cdn.rawgit.com/cferdinandi/smooth-scroll/aad0d74d4d97d9ca8e1323356abded9d5770a714/dist/js/smooth-scroll.min.js'></script>
+        <script src="admin.js"></script>
+        <div class="allContent">
+            <center class="Topic">Dashboard</center><br><br>
+            <div class="container">
+                <div class="wrap">
+                  <p class="countup">CountUp Social Media Influences </p>
+                  <div class="">
+                     <h2><i class="fa fa-thumbs-o-up fa-2x"></i></h2>
+                  </div>
+                  <h1 class="red"><span id="number">100</span> likes</h1>
+                  <div class="">
+                     <h2><i class="fa fa-heart fa-2x"></i></h2>
+                  </div>
+                  <h1 class="red"><span id="number1">100</span> shares</h1>
+                  
+              </div>
+              </div>
+                <br><br><br>
+                <center class="t_topic">Voting Results of the last round</center>
+              <br><br><br>
+
+              <div class="winner">
+                <table width="100%" border="1" class="w_table">
+                <tr>
+                    <th>Place</th>
+                    <th width="50%">Contestant</th>
+                    <th>Number of Votes</th>
+                </tr>
+                <tr class="t_row">
+                    <td>1</td>
+                    <td>#Name1</td>
+                    <td>#no</td>
+                </tr>
+                <tr class="t_row">
+                    <td>2</td>
+                    <td>#Name2</td>
+                    <td>#no</td>
+                </tr>
+                <tr class="t_row">
+                    <td>3</td>
+                    <td>#Name3</td>
+                    <td>#no</td>
+                </tr>
+                <tr class="t_row">
+                    <td>4</td>
+                    <td>#Name4</td>
+                    <td>#no</td>
+                </tr>
+                <tr class="t_row">
+                    <td>5</td>
+                    <td>#Name4</td>
+                    <td>#no</td>
+                </tr>
+                <tr class="t_row">
+                    <td>6</td>
+                    <td>#Name4</td>
+                    <td>#no</td>
+                </tr>
+                </table>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer_container">
+                <div class = "footer_row">
+                <img class="footer_logo" src="../header/My project-1 (1).png">
+                <table class="footer_table">
+                <tr><td rowspan="3"><b>Contacts</b><br><br>
+                    <i class="fa fa-phone"></i>&nbsp;&nbsp;+94 112312459<br><br>
+                    <i class="fa fa-envelope"></i>&nbsp;&nbsp;theSingOff@mail.com</td>
+                    <td colspan="4"><center><b style="font-size: larger;">Follow us on</b></center></td>
+                </tr>
+                <tr height="30px">
+                    <td colspan="4"><center>
+                        <div class="social_icons">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-google-plus"></i></a>
+                        </div></center>
+                        </td>
+                </tr>
+                <tr>
+                    <div>
+                <td><a href="#" class="footer-links">Copyright</a></td>
+                <td><a href="../user account,rules & regulations/rules.html"class="footer-links">Privacy policy</a></td>
+                <td><a href="../user account,rules & regulations/rules.html" class="footer-links">Terms and Conditions</a></td>
+                <td><a href="../contactus,faq,vote/finalfaq.html" class="footer-links">FAQs</a></td>
+                    </div>
+                </tr>
+               </table>
+            </div>
+            </div>
+        </footer>
+    </body>
+</html>

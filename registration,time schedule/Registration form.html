@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sing-Off voting platform</title>
+    <link rel= "stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="Registration form.css">
+    <script src="Registration form.js"></script>
+</head>
+    <header>
+        <table style="width: 100%;">
+         <div class="div2" >
+            <tr style="height: 150px;">
+            <td id="logo_img"><img src="My project-1 (1).png" id = "logo_img"></td>
+            <td id="header_text">
+            <h1 style="font-size: 50px;">SING-OFF!!</h1>
+            <h2 style="font-size: xx-large;"> Online voting platform</h2>
+            </td>
+            </tr>
+        </div>
+        </table>
+      
+        <div id="navbar" style="font-family: Arial, Helvetica, sans-serif;">
+            <table width="100%">
+                <tr>
+                <td class="td1"><a href="../homepage/homepage.html"> <b>HOME</b></a></td>
+                <td class="td1"> <a href="../contactus,faq,vote/finalcontactus.html"><b>CONTACT US</b></a></td>
+                <td class="td1">
+                    <div class="dropdown">
+                        <button class="dropbtn"><b>ACCOUNTS</b></button>
+                    <div class="dropdown-content">
+                    <ul>
+                       <li><a href="../login,contestant profile/contestant profile .html">Contestant</a></li>
+                       <li><a href="../user account,rules & regulations/user account.html">My Profile</a></li>
+                       <li><a href="../Admin acc/admin.html">Admin</a></li>
+                    </ul>
+                    </div>
+                    </div> 
+                </td>
+                <td class="td1">
+                    <div class="dropdown">
+                        <button class="dropbtn"><b>MORE</b></button>
+                        <div class="dropdown-content">
+                            <ul>
+                                <li><a href="../contactus,faq,vote/finalvote.html">Vote now!</a></li>
+                                <li><a href="../Results page/results.html">View Results</a></li>
+                                <li><a href="../contactus,faq,vote/finalfaq.html">FAQ's</a></li>
+                                <li><a href="../user account,rules & regulations/rules.html">Rules and Regulations</a></li>
+                                <li><a href="../registration,time schedule/Time shedule.html">What's next?</a></li>
+                            </ul>
+                        </div>
+                    </div> 
+                </td>
+                <td style="empty-cells:hide; width: 600px;"></td>
+                
+                </tr>
+            </table>
+        </div>
+    </header>
+    <body>      
+        <script>
+            window.onscroll = function() {myFunction()};
+
+            var navbar = document.getElementById("navbar");
+            var sticky = navbar.offsetTop;
+
+            function myFunction(){
+                if(window.pageYOffset >= sticky){
+                    navbar.classList.add("sticky")
+                } else {
+                    navbar.classList.remove("sticky");
+                }
+            }
+        </script>
+
+        <div class="allContent">
+
+            <table>
+                <tr>
+                    <td>
+                        <div id="form-container" class="container">
+                            <form
+                                id = "registration-form"
+                                data-jsv-form="true"
+                                data-jsv-submit-handler="customSubmitHandler"
+                                data-jsv-disable-icons="false"
+                                data-jsv-disable-invalid="true"
+                                data-jsv-form-valid-callback="formValidCallback"
+                                data-jsv-form-invalid-callback="formInvalidCallback"
+                                data-jsv-form-invalid-message="Please correct the errors below"
+                                data-jsv-form-incomplete-tooltip="Please complete all fields">
+
+                                <fieldset>
+                                    <legend>
+                                        <h2 class="header">Registration form</h2>
+                                    </legend>
+
+                                    <div class="box">
+
+                                        <div class="form-group">
+                                            <label for="first">Name:</label>
+                                            <input
+                                                type="text"
+                                                name="first"
+                                                id="first"
+                                                data-jsv-validators="require,length"
+                                                placeholder="First">
+                                            <input
+                                                type="text"
+                                                name="second"
+                                                id="second"
+                                                data-jsv-validators="require,length"
+                                                placeholder="Second">
+                                        </div>
+
+                                        <br>
+                                        <label for="DOB">Date of Birth:</label>
+                                        <input
+                                            type="date"
+                                            id="tDOB"
+                                            name="DOB"
+                                            placeholder="Date of Birth">
+
+                                        <br><br>
+                                        
+                                        <label for="gender">Gender:</label>
+                                        <select id="gender" name="gender" required class="gender">
+                                            <option value="text">Select</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                        </select>
+
+                                        <br><br>
+
+                                        <label for="test-email">E-Mail Address:</label>
+                                        <input
+                                            type="text"
+                                            id="test-email"
+                                            name="Login"
+                                            placeholder="E-Mail Address (yardy@yarr.com)"
+                                            class="form-control">
+
+                                        <br>
+                                        
+                                        <label for="phone">Code:</label>
+                                        <input
+                                            type="tel"
+                                            id="code"
+                                            name="code"
+                                            placeholder="Code">
+                                        
+                                        <label for="phone">Phone Number:</label>
+                                        <input
+                                            type="tel"
+                                            id="phone"
+                                            name="phone"
+                                            placeholder="Phone">
+
+                                        <br>
+
+                                        <label for="address">Address</label>
+                                        <input
+                                            type="text"
+                                            id="no"
+                                            name="no"
+                                            placeholder="No">
+                                        <input
+                                            type="text"
+                                            id="line2"
+                                            name="line2"
+                                            placeholder="Street">
+
+                                        <br>
+
+                                        <input
+                                            type="text"
+                                            id="line2"
+                                            name="line2"
+                                            placeholder="City">
+                                        
+                                        <br><br>
+                                        
+                                        <label for="province">Province:</label>
+                                        <select id="province" class="province" name="province" required>
+                                            <option value="text">Province</option>
+                                            <option value="Western">Western</option>
+                                            <option value="North Western">North Western</option>
+                                            <option value="text">Nothern</option>
+                                            <option value="text">North Central</option>
+                                            <option value="text">Southern</option>
+                                            <option value="text">Eastern</option>
+                                            <option value="text">Uva</option>
+                                            <option value="text">Central</option>
+                                            <option value="text">Sabaragamuwa</option>
+                                        </select>
+
+                                        <br><br>
+                                        <hr>
+                                    
+                                        <label for="username">Username:</label>
+                                        <input
+                                            type="text"
+                                            name="username"
+                                            id="username"
+                                            data-jsv-validators="require,length"
+                                            data-jsv-min="6"
+                                            data-jsv-max="10"
+                                            placeholder="Username">
+
+                                        <br>
+                                        
+                                        <label for="test-password">Password:</label>
+                                        <input
+                                            type="password"
+                                            name="Password"
+                                            id="test-password"
+                                            data-jsv-validators="require,length"
+                                            data-jsv-min="6"
+                                            data-jsv-max="10"
+                                            placeholder="Password">
+                                        
+                                        <br>
+                                        
+                                        <label for="test-confirm-password">Confirm Password:</label>
+                                        <input
+                                            type="password"
+                                            name="ConfirmPassword"
+                                            id="test-confirm-password"
+                                            placeholder="Confirm Password"
+                                            data-jsv-validators="dependent,require,compare"
+                                            data-jsv-dependents="Password"
+                                            data-jsv-compare="Password">
+                                        
+                                        <br>
+                                        
+                                        <input
+                                            data-jsv-validators="requiremin"
+                                            data-jsv-message-target="checkbox-invalid"
+                                            data-jsv-validation-target="checkboxvalidate"
+                                            data-jsv-field-error-requiremin="Please agree to the terms and conditions"
+                                            type="checkbox"
+                                            name="agree"
+                                            value="more">
+                                        <label for="agree">I agree to the terms and conditions</label>
+
+                                        <br>
+
+                                        <button type="submit" id="button_f" class="button_f" value="Cancel">
+                                            Cancel
+                                        </button>
+
+                                        <button type="submit" id="button_f" class="button_f" value="Cancel">
+                                            Register
+                                        </button>
+                                    </div>
+                                </fieldset>
+
+                                <div id="password-error" class="error-message"></div>
+                              <div id="confirm-password-error" class="error-message"></div>
+  
+                            </form>
+                        </div>
+                    </td>
+
+                    <td style="width: 50%; ">
+                        <img src="Reg2.jpg" alt="image" width="100%" height="100%">
+                    </td>
+
+                </tr>
+            </table>
+
+        </div>
+
+        <footer>
+            <div class="footer_container">
+                <div class = "footer_row">
+                <img class="footer_logo" src="My project-1 (1).png">
+                <table class="footer_table">
+                <tr><td rowspan="3"><b>Contacts</b><br><br>
+                    <i class="fa fa-phone"></i>&nbsp;&nbsp;+94 112312459<br><br>
+                    <i class="fa fa-envelope"></i>&nbsp;&nbsp;theSingOff@mail.com</td>
+                    <td colspan="4"><center><b style="font-size: larger;">Follow us on</b></center></td>
+                </tr>
+                <tr height="30px">
+                    <td colspan="4"><center>
+                        <div class="social_icons">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-google-plus"></i></a>
+                        </div></center>
+                        </td>
+                </tr>
+                <tr>
+                    <div class="footer-links">
+                <td><a href="#">Copyright</a></td>
+                <td><a href="../user account,rules & regulations/rules.html">Privacy policy</a></td>
+                <td><a href="../user account,rules & regulations/rules.html">Terms and Conditions</a></td>
+                <td><a href="../contactus,faq,vote/finalfaq.html">FAQs</a></td>
+                </div>
+                </tr>
+               </table>
+            </div>
+            </div>
+        </footer>
+    </body>
+</html> 

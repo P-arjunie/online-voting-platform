@@ -1,0 +1,135 @@
+.card2 {
+  box-shadow: 0 10px 7px -5px rgba(0, 0, 0, 0.4);
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: aliceblue;
+
+    height: 90%;
+  }
+  
+.cont {
+  position: relative;
+  width: 100%;
+  
+}
+
+.image {
+  display: block;
+  padding: 0;
+ 
+width:100%;
+ 
+}
+
+.overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 90%;
+  transition: 2s ease;
+  opacity:0;
+  color: white;
+  font-size: xx-large;
+  padding: 5%;
+  text-align: center;
+}
+
+.cont:hover .overlay {
+  opacity: 1;
+}
+.card2 h1{
+  font-size: xx-large;
+}
+  .cname {
+    color: grey;
+    font-size: larger;
+  }
+  
+  .card2 button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  .card2 button:hover {
+    opacity: 0.7;
+  }
+  .card2:hover {
+    box-shadow: 16px 16px 16px 0 rgba(0,0,0,0.2);
+  }
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+left: 42%;
+ top: 30%;
+  z-index: 9;
+}
+.form-popup img{
+  margin-top: -100px; border-radius: 50%;
+   box-shadow: 0 2px  5px black;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: rgb(0, 3, 10);
+  color: aliceblue;
+  text-shadow: #000;
+  box-shadow: 0 4px 8px 0 rgb(0, 5, 14);
+
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #6573d0;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+  box-shadow: 0 2px 5px black;
+  font-size:small;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color:  #c8c;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+.tab1 td{
+  padding-top: 10px;
+  height: 380px;
+}

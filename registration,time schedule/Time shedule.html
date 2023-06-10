@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sing-Off voting platform</title>
+    <link rel= "stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="Time schedule.css">
+</head>
+    <header>
+        <table style="width: 100%;">
+         <div class="div2" >
+            <tr style="height: 150px;">
+            <td id="logo_img"><img src="My project-1 (1).png" id = "logo_img"></td>
+            <td id="header_text">
+            <h1 style="font-size: 50px;">SING-OFF!!</h1>
+            <h2 style="font-size: xx-large;"> Online voting platform</h2>
+            </td>
+            </tr>
+        </div>
+        </table>
+      
+        <div id="navbar" style="font-family: Arial, Helvetica, sans-serif;">
+            <table width="100%">
+                <tr>
+                <td class="td1"><a href="../homepage/homepage.html"> <b>HOME</b></a></td>
+                <td class="td1"> <a href="../contactus,faq,vote/finalcontactus.html"><b>CONTACT US</b></a></td>
+                <td class="td1">
+                    <div class="dropdown">
+                        <button class="dropbtn"><b>ACCOUNTS</b></button>
+                    <div class="dropdown-content">
+                    <ul>
+                       <li><a href="../login,contestant profile/contestant profile .html">Contestant</a></li>
+                       <li><a href="../user account,rules & regulations/user account.html">My Profile</a></li>
+                       <li><a href="../Admin acc/admin.html">Admin</a></li>
+                    </ul>
+                    </div>
+                    </div> 
+                </td>
+                <td class="td1">
+                    <div class="dropdown">
+                        <button class="dropbtn"><b>MORE</b></button>
+                        <div class="dropdown-content">
+                            <ul>
+                                <li><a href="../contactus,faq,vote/finalvote.html">Vote now!</a></li>
+                                <li><a href="../Results page/results.html">View Results</a></li>
+                                <li><a href="../contactus,faq,vote/finalfaq.html">FAQ's</a></li>
+                                <li><a href="../user account,rules & regulations/rules.html">Rules and Regulations</a></li>
+                                <li><a href="../registration,time schedule/Time shedule.html">What's next?</a></li>
+                            </ul>
+                        </div>
+                    </div> 
+                </td>
+                <td style="empty-cells:hide; width: 600px;"></td>
+                
+                </tr>
+            </table>
+        </div>
+    </header>
+    <body>      
+        <script>
+            window.onscroll = function() {myFunction()};
+
+            var navbar = document.getElementById("navbar");
+            var sticky = navbar.offsetTop;
+
+            function myFunction(){
+                if(window.pageYOffset >= sticky){
+                    navbar.classList.add("sticky")
+                } else {
+                    navbar.classList.remove("sticky");
+                }
+            }
+        </script>
+
+        <div class="allContent">
+
+            <script>
+                function myFunction1() {
+                  var x = document.getElementById("des_1");
+                  if (x.style.display === "none") {
+                    x.style.display = "block";
+                  } else {
+                    x.style.display = "none";
+                  }
+                }
+            </script>
+
+            <script>
+                function myFunction2() {
+                    var x = document.getElementById("des_2");
+                    if (x.style.display === "none") {
+                        x.style.display = "block";
+                    } else {
+                        x.style.display = "none";
+                    }
+                }
+            </script>
+
+            <script>
+                function myFunction3() {
+                    var x = document.getElementById("des_3");
+                    if (x.style.display === "none") {
+                        x.style.display = "block";
+                    } else {
+                        x.style.display = "none" ;
+                    }
+                }
+            </script>
+
+            <script>
+                function myFunction4() {
+                    var x = document.getElementById("des_4");
+                    if (x.style.display === "none") {
+                        x.style.display = "block";
+                    } else {
+                        x.style.display = "none";
+                    }
+                }
+            </script>
+
+        <script>
+                function myFunction5() {
+                    var x = document.getElementById("des_5");
+                    if (x.style.display === "none") {
+                        x.style.display = "block";
+                    } else {
+                        x.style.display = "none";
+                    }
+                }
+        </script>
+            
+            <br>
+            <h1 class="con_header1">Time schedule of Sing-off Voting Platform</h1>
+            <div class="cards">
+
+                <div class="card">
+                    <div class="card__image-holder">
+                        <img class="card__image" src="Timer4.jpg" alt="image1" />
+                    </div>
+
+                    <div class="card-title">
+                        <h2>
+                            First round
+                        </h2>
+                            <small class="date">12/08/2023</small>
+                            <br>
+                            <br>
+                            <button onclick="myFunction1()" class="btn"> Read More </button>
+                            <br>
+                            <div id="des_1">
+                            The first round of the sing-off Reality show will be aired on 12th August 2023, at 20 p.m.
+                            </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card__image-holder">
+                        <img class="card__image" src="Time7.jpg" alt="image2" />
+                    </div>
+
+                    <div class="card-title">
+                        <h2>
+                            Second round
+                        </h2>
+                            <small class="date">12/09/2023</small>
+                            <br>
+                            <br>
+                            <button onclick="myFunction2()" class="btn"> Read More </button>
+                            <br>
+                            <div id="des_2">
+                            The second round of the sing-off Reality show will be aired on 12th September 2023, at 20 p.m.
+                            </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card__image-holder">
+                        <img class="card__image" src="Time8.jpg" alt="image3" />
+                    </div>
+
+                    <div class="card-title">
+                        <h2>
+                            Third round
+                        </h2>
+                            <small class="date">12/10/2023</small>
+                            <br>
+                            <br>
+                            <button onclick="myFunction3()" class="btn"> Read More </button>
+                            <br>
+                            <div id="des_3">
+                            The third round of the sing-off Reality show will be aired on 12th October 2023, at 20 p.m.
+                            </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card__image-holder">
+                        <img class="card__image" src="Time4.jpg" alt="image4" />
+                    </div>
+
+                    <div class="card-title">
+                        <h2>
+                            Semi-Finals
+                        </h2>
+                            
+                            <small class="date">12/11/2023</small>
+                            <br>
+                            <br>
+                            <button onclick="myFunction4()" class="btn"> Read More </button>
+                            <br>
+                            <div id="des_4">
+                            The fourth round of the sing-off Reality show will be aired on 12th November 2023, at 20 p.m.
+                            </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card__image-holder">
+                        <img class="card__image" src="Time5.jpg" alt="image5" />
+                    </div>
+
+                    <div class="card-title">
+                        <h2>
+                            Finals
+                        </h2>
+                            <small class="date">17/11/2023</small>
+                            <br>
+                            <br>
+                            <button onclick="myFunction5()" class="btn"> Read More </button>
+                            <br>
+                            <div id="des_5">
+                            The fifth round of the sing-off Reality show will be aired on 17th November 2023, at 20 p.m.
+                            </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <footer>
+            <div class="footer_container">
+                <div class = "footer_row">
+                <img class="footer_logo" src="My project-1 (1).png">
+                <table class="footer_table">
+                <tr><td rowspan="3"><b>Contacts</b><br><br>
+                    <i class="fa fa-phone"></i>&nbsp;&nbsp;+94 112312459<br><br>
+                    <i class="fa fa-envelope"></i>&nbsp;&nbsp;theSingOff@mail.com</td>
+                    <td colspan="4"><center><b style="font-size: larger;">Follow us on</b></center></td>
+                </tr>
+                <tr height="30px">
+                    <td colspan="4"><center>
+                        <div class="social_icons">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-google-plus"></i></a>
+                        </div></center>
+                        </td>
+                </tr>
+                <tr>
+                    <div class="footer-links">
+                        <td><a href="#">Copyright</a></td>
+                        <td><a href="../user account,rules & regulations/rules.html">Privacy policy</a></td>
+                        <td><a href="../user account,rules & regulations/rules.html">Terms and Conditions</a></td>
+                        <td><a href="../contactus,faq,vote/finalfaq.html">FAQs</a></td>
+                </div>
+                </tr>
+               </table>
+            </div>
+            </div>
+        </footer>
+    </body>
+</html>
