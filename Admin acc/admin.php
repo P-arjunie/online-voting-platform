@@ -38,9 +38,9 @@
                         <button class="dropbtn"><b>ACCOUNTS</b></button>
                     <div class="dropdown-content">
                     <ul>
-                       <li><a href="#">Contestant</a></li>
-                       <li><a href="#">My Profile</a></li>
-                       <li><a href="#">Admin</a></li>
+                       <li><a href="../login,contestant profile/contestant profile .html">Contestant</a></li>
+                       <li><a href="../user account,rules & regulations/user account.php">My Profile</a></li>
+                       <li><a href="../Admin acc/admin.php">Admin</a></li>
                     </ul>
                     </div>
                     </div> 
@@ -51,7 +51,7 @@
                         <div class="dropdown-content">
                             <ul>
                                 <li><a href="../contactus,faq,vote/finalvote.html">Vote now!</a></li>
-                                <li><a href="../Results page/results.html">View Results</a></li>
+                                <li><a href="../Results page/results.php">View Results</a></li>
                                 <li><a href="../contactus,faq,vote/finalfaq.html">FAQ's</a></li>
                                 <li><a href="../user account,rules & regulations/rules.html">Rules and Regulations</a></li>
                                 <li><a href="../registration,time schedule/Time shedule.html">What's next?</a></li>
@@ -103,48 +103,93 @@
                 <br><br><br>
                 <center class="t_topic">Voting Results of the last round</center>
               <br><br><br>
+<?php
+$conn = new mysqli('localhost', 'root', '', 'votingsystem');
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-              <div class="winner">
-                <table width="100%" border="1" class="w_table">
-                <tr>
-                    <th>Place</th>
-                    <th width="50%">Contestant</th>
-                    <th>Number of Votes</th>
-                </tr>
-                <tr class="t_row">
-                    <td>1</td>
-                    <td>#Name1</td>
-                    <td>#no</td>
-                </tr>
-                <tr class="t_row">
-                    <td>2</td>
-                    <td>#Name2</td>
-                    <td>#no</td>
-                </tr>
-                <tr class="t_row">
-                    <td>3</td>
-                    <td>#Name3</td>
-                    <td>#no</td>
-                </tr>
-                <tr class="t_row">
-                    <td>4</td>
-                    <td>#Name4</td>
-                    <td>#no</td>
-                </tr>
-                <tr class="t_row">
-                    <td>5</td>
-                    <td>#Name4</td>
-                    <td>#no</td>
-                </tr>
-                <tr class="t_row">
-                    <td>6</td>
-                    <td>#Name4</td>
-                    <td>#no</td>
-                </tr>
-                </table>
-            </div>
-        </div>
+// Query the database for vote counts
+$sql = "SELECT v.CanidateId, f.Name, COUNT(*) AS VoteCount
+FROM vote v
+INNER JOIN finalist_master f ON v.CanidateId = f.Id
+GROUP BY v.CanidateId, f.Name";
+$result = $conn->query($sql);  
 
+if ($result->num_rows > 0) {
+    $voteCounts = array(); // Array to store the vote counts
+
+    // Fetch the vote counts into an associative array
+    while ($row = $result->fetch_assoc()) {
+        $candidateId = $row['CanidateId'];
+        $name = $row['Name'];
+        $voteCount = $row['VoteCount'];
+        $voteCounts[$candidateId] = array('name' => $name, 'voteCount' => $voteCount); // Store both name and vote count
+    }
+
+    $conn->close();
+} else {
+    echo "No results found.";
+    $conn->close();
+    exit;
+}
+?>
+
+<div class="winner">
+    <table width="100%" border="1" class="w_table">
+        <tr>
+            <th>Place</th>
+            <th width="50%">Contestant</th>
+            <th>Number of Votes</th>
+        </tr>
+        <tr class="t_row">
+            <td>1</td>
+            <td><?php echo htmlspecialchars($voteCounts[1]['name']); ?></td>
+            <td><?php echo isset($voteCounts[1]) ? $voteCounts[1]['voteCount'] : 0; ?></td>
+        </tr>
+        <tr class="t_row">
+            <td>2</td>
+            <td><?php echo htmlspecialchars($voteCounts[2]['name']); ?></td>
+            <td><?php echo isset($voteCounts[2]) ? $voteCounts[2]['voteCount'] : 0; ?></td>
+        </tr>
+        <tr class="t_row">
+            <td>3</td>
+            <td><?php echo htmlspecialchars($voteCounts[3]['name']); ?></td>
+            <td><?php echo isset($voteCounts[3]) ? $voteCounts[3]['voteCount'] : 0; ?></td>
+        </tr>
+        <tr class="t_row">
+            <td>4</td>
+            <td><?php echo htmlspecialchars($voteCounts[4]['name']); ?></td>
+            <td><?php echo isset($voteCounts[4]) ? $voteCounts[4]['voteCount'] : 0; ?></td>
+        </tr>
+        <tr class="t_row">
+            <td>5</td>
+            <td><?php echo htmlspecialchars($voteCounts[5]['name']); ?></td>
+            <td><?php echo isset($voteCounts[5]) ? $voteCounts[5]['voteCount'] : 0; ?></td>
+        </tr>
+        <tr class="t_row">
+            <td>6</td>
+            <td><?php echo htmlspecialchars($voteCounts[6]['name']); ?></td>
+            <td><?php echo isset($voteCounts[6]) ? $voteCounts[6]['voteCount'] : 0; ?></td>
+        </tr>
+    </table>
+</div><br><br>
+<table>
+    <tr> <td style="empty-cells:hide; width: 400px;"></td>
+        <td>
+        <button  style="color:white; background-color: rgb(73, 71, 185); border-radius:10px; padding:10px">
+  <a href="../history page/history.php" style="text-decoration:none; color:white;">  view contact us responses</a> 
+</button>
+         </td>
+         <td>
+        <button  style="color:white; background-color: rgb(73, 71, 185); border-radius:10px; padding:10px">
+  <a href="../history page/history.php" style="text-decoration:none; color:white;"> view register history</a> 
+</button>
+         </td>
+    </tr>
+</table>
+<br><br>
         <footer>
             <div class="footer_container">
                 <div class = "footer_row">

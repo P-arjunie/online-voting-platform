@@ -4,7 +4,6 @@
     <title>Sing-Off voting platform</title>
     <link rel= "stylesheet" href="header.css">
     <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="rules.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -26,6 +25,14 @@
         </table>
     </header>
     <body>  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    var un = localStorage.getItem('username');
+    document.cookie = 'username' + "=" + un;
+  });
+</script>
+</script>
         <div id="navbar" style="font-family: Arial, Helvetica, sans-serif;">
             <table width="100%">
                 <tr>
@@ -37,8 +44,8 @@
                     <div class="dropdown-content">
                     <ul>
                        <li><a href="../login,contestant profile/contestant profile .html">Contestant</a></li>
-                       <li><a href="../user account,rules & regulations/user account.php">My Profile</a></li>
-                       <li><a href="../Admin acc/admin.php">Admin</a></li>
+                       <li><a href="user account.html">My Profile</a></li>
+                       <li><a href="../Admin acc/admin.html">Admin</a></li>
                     </ul>
                     </div>
                     </div> 
@@ -49,16 +56,16 @@
                         <div class="dropdown-content">
                             <ul>
                                 <li><a href="../contactus,faq,vote/finalvote.html">Vote now!</a></li>
-                                <li><a href="../Results page/results.php">View Results</a></li>
+                                <li><a href="../Results page/results.html">View Results</a></li>
                                 <li><a href="../contactus,faq,vote/finalfaq.html">FAQ's</a></li>
-                                <li><a href="../user account,rules & regulations/rules.html">Rules and Regulations</a></li>
+                                <li><a href="rules.html">Rules and Regulations</a></li>
                                 <li><a href="../registration,time schedule/Time shedule.html">What's next?</a></li>
                             </ul>
                         </div>
                     </div> 
                 </td>
                 <td style="empty-cells:hide; width: 600px;"></td>
-              
+            
                 </tr>
             </table>
         </div>    
@@ -79,35 +86,73 @@
         <div class="allContent">
 
             
-            <div style=" box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.76) ;">
-        <hr>
-		 <div class="background-image" style="font-family: Arial, Helvetica, sans-serif; ;">
-		<div>
-            <center><h1 style=" text-shadow: 0 1px 5px #ffffff, 0 0 5px #ffffff;"><b>Rules & Regulations</b></h1></center>
-        </div>
-<hr>
+      
 
-<ul>
-<p><b>&#10024;Elabity To participate in the voting process, viewers must be of a particular age or have legal permission The terms and conditions of the show frequently include eligibitity criteria
-</b></p>
-<br>
-<p><b>&#10024;Voting Charnels: Viewers are often presented with multiple voting channels through which to cast their votes. Phone calls, text messaging onine voting platforms, mobile apps, and social media platforms are examples of these. During the show, the available voting charnels are frequently announced and promoted
-</b></p>
-<br>
-<p><b>&#10024;Voting Period A particular period is set aside for voting usually during or soon following the program The time span can range fram a few minutes to several day's. The start and conclusion hours of the voting period will be clearly communicated on the show. Limits on Voting To promote fairness and prevent misuse, limits on the amount of votes an individual can cast are frequently imposed This
-</b></p>
-<br>
-<p><b>&#10024;can include timiting the number of votes per phone number, account, or voting platform Vote Counting Typically, the show's production crew or a designated third-party agency counts the votes. Although the actual mechanism for counting votes varies, it is usually inspected and confirmed to ensure transparency and accuracy.
-</b></p>
-<br>
-<p><b>&#10024;Results Announcement The vote results are usually announced on future programs or at a predetermined time. The manner in which the results are arnaunced can vary, for as through a live broadcast, a pre-récorded section or an internet announcement.
-</b></p>
-<br>
-<p><b>&#10024;Elimination or Advancement Contestants with the fewest votes may be ousted from the show, while those with the most votes may progress to the next round The format of the show determines the exact requlations for eliminations and advancements
-</b></p>
-<br>
+
+  
+  
+
+
+  <?php
+  $UN = $_COOKIE["username"];
+  // Retrieve the value passed from JavaScript
+  // Retrieve the value passed from JavaScript
+
+  
+  $conn = new mysqli('localhost', 'root', '', 'votingsystem');
+  // Check connection
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+  }
+
+  // Query the database
+  $sql = "SELECT UserName, ContactNo, Email FROM user WHERE UserName = '$UN'";
+  $result = $conn->query($sql);
+
+  if ($result->num_rows > 0) {
+      // Output data of the first row
+      $row = $result->fetch_assoc();
+      $UserName = $row["UserName"];
+      $ContactNo = $row["ContactNo"];
+      $Email = $row["Email"];
+
+      // Use the retrieved values as needed
+      // ...
+
+  } else {
+      echo "No results found.";
+  }
+
+  $conn->close();
+?>
+<h2 style="text-align:center;color: aliceblue;">Hello ! <?php echo $UserName; ?></h2> 
+ <main>
+  <section>
+
+    <div class="card" style="background-color: rgb(255, 255, 255);box-shadow: 0 4px 8px 0 rgb(0, 5, 14);text-align: center; 
+    font-family: Arial, Helvetica, sans-serif; width: 40%;position: relative;left: 30%;"><br>
+<h3>Account Information</h3>
+  <img class=""  src="c1.jpeg" alt="John" style="width:200px">
+  
+ 
+           
+  
+  <p><strong>User Name:</strong> <?php echo $UserName; ?></p>
+<p><strong>Phone Number:</strong><?php echo $ContactNo; ?></p>
+<p><strong>E-mail:</strong><?php echo $Email; ?></p>
+<p><strong>Status:</strong>Not voted</p><br>
+  </div>
+ 
+
+    
+    
+    
+	
+    
+  </section>
+</main>
 </div>
-</div>
+ 
 <footer>
     <div class="footer_container">
         <div class = "footer_row">

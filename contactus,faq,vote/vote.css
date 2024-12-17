@@ -1,9 +1,9 @@
 .card2 {
-  box-shadow: 0 10px 7px -5px rgba(0, 0, 0, 0.4);
+  box-shadow: 10px rgb(253, 249, 255);
     width: 50%;
     margin: auto;
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
     background-color: aliceblue;
 
     height: 90%;
@@ -38,8 +38,50 @@ width:100%;
   text-align: center;
 }
 
+.td5{
+  width: 65%;
+ 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  
+  transition: 2s ease;
+  opacity:1;
+  color: white;
+
+ text-align: center;
+
+}
+.conclusion{
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  
+  transition: 2s ease;
+  opacity:1;
+  color: white;
+
+ text-align: center;
+}
+.td5 h1, .conclusion h1{
+ 
+font-size: 50px;
+color:white;
+}
+.td5 p,.conclusion p{
+  padding: 10px;
+  font-size: 20px;
+  color: white;
+}
+.td6{
+  width: 35%;
+  padding-right: 0px;
+}
+.t6 img{
+  padding-right: 0px;
+}
 .cont:hover .overlay {
-  opacity: 1;
+  opacity: 0.5;
 }
 .card2 h1{
   font-size: xx-large;
@@ -65,7 +107,7 @@ width:100%;
     opacity: 0.7;
   }
   .card2:hover {
-    box-shadow: 16px 16px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 16px 16px 16px 0 rgba(248, 247, 247, 0.2);
   }
 /* The popup form - hidden by default */
 .form-popup {
@@ -132,4 +174,23 @@ left: 42%;
 .tab1 td{
   padding-top: 10px;
   height: 380px;
+}
+.btn8{
+  background: transparent;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+      background-color: blueviolet;
+      color: white;
+      border-radius: 20px;
+      border-color: blueviolet;
+      padding: 10px;
+      text-align: center;
+      
+}
+.btn8:hover{
+  border: 1px solid white;
+  color: black;
+  background: white;
+  transition: .4s;
 }

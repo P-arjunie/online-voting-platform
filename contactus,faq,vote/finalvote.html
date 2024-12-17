@@ -38,8 +38,8 @@
                     <div class="dropdown-content">
                     <ul>
                        <li><a href="../login,contestant profile/contestant profile .html">Contestant</a></li>
-                       <li><a href="../user account,rules & regulations/user account.html">My Profile</a></li>
-                       <li><a href="../Admin acc/admin.html">Admin</a></li>
+                       <li><a href="../user account,rules & regulations/user account.php">My Profile</a></li>
+                       <li><a href="../Admin acc/admin.php">Admin</a></li>
                     </ul>
                     </div>
                     </div> 
@@ -50,7 +50,7 @@
                         <div class="dropdown-content">
                             <ul>
                                 <li><a href="finalvote.html">Vote now!</a></li>
-                                <li><a href="../Results page/results.html">View Results</a></li>
+                                <li><a href="../Results page/results.php">View Results</a></li>
                                 <li><a href="finalfaq.html">FAQ's</a></li>
                                 <li><a href="../user account,rules & regulations/rules.html">Rules and Regulations</a></li>
                                 <li><a href="../registration,time schedule/Time shedule.html">What's next?</a></li>
@@ -77,23 +77,49 @@
                 }
             }
         </script>
-    <div class="allContent" style="font-family: Verdana, Geneva, Tahoma, sans-serif; ">
-        <div class="cont">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    var un = localStorage.getItem('username');
+    document.cookie = 'username' + "=" + un;
+  });
+</script>
+      
+    <div class="allContent"   >
+      <div style="background-color: black;height: 100%;">
+
+      
+        <div class="cont" >
             <img src="c20.jpg" alt="finalist" class="image" width="1700px">
            <div class="overlay">
                               <h2 style="padding-left: 40px;">VOTE NOW!
                               </h2>
                               <h3 style="padding-left: 40px;">Open until Sunday at 4 pm.</h3>
                           </div></div>
-                          <h3 style="text-align: center;">
-                            <b>    <a href="" style="color: white;">check contestant's profiles and performance before voting!</a>
-                            </b>
-                          </h3>
-                       <div >
-                        <h1 style="text-align: center;color: white; font-size: 40px;
-                        text-shadow:  0 2px  2px rgb(73, 71, 185);
-                        "><b>Top 6 Finalists</b></h1>
-                       </div>
+<br><br><br><br>
+                          <div>
+                            <table>
+                              <tr>
+                                  <td class="td5" >
+                                    <h1>
+                                      Presenting Our Incredible Contestants!
+                                     </h1>
+                                     <p >
+                                      Our talented contestants are ready to dazzle you with their incredible performances. Get to know the voices behind the music and see who’s competing for the top spot!
+                                     </p>
+                                     <a href="../login,contestant profile/contestant profile .html"><button class="btn8">view contestants</button></a>
+                           
+                                     <div >
+                                    <h1 style="text-align: center;color: white; font-size: 40px;
+                                    text-shadow:  0 2px  2px rgb(73, 71, 185);
+                                    "><b>Vote for Your Favorit  e Contestants!</b></h1> </td>
+                                  <td class="td6">
+                                      <img src="../homepage/contestant2.jpg" width="100%" alt="" >
+                                  </td>
+                              </tr>
+                          </table>
+                        
+   </div>
         <table class="tab1" border="0" style="width: 100%;">
             <tr>
                 <td style="width: 30%;">
@@ -159,7 +185,7 @@
         </table>
 
         <div class="form-popup" id="myForm1">
-            <form action="/action_page.php" class="form-container" >
+            <form action="popup1.php" method="post" class="form-container" >
               <img src="c13.jpeg" alt="" height="200px" width="200px" >
             
               <div style="text-align: center;">
@@ -173,7 +199,7 @@
           </div>
 
           <div class="form-popup" id="myForm2">
-            <form action="/action_page.php" class="form-container">
+            <form action="popup2.php" method="post" class="form-container">
               <img src="c11.jpg" alt="" height="200px" width="200px" >
             
               <div style="text-align: center;">
@@ -187,7 +213,7 @@
           </div>
 
           <div class="form-popup" id="myForm3">
-            <form action="/action_page.php" class="form-container">
+            <form action="popup3.php" method="post" class="form-container">
               <img src="c5.jpg" alt="" height="200px" width="200px" >
             
               <div style="text-align: center;">
@@ -201,7 +227,7 @@
           </div>
 
           <div class="form-popup" id="myForm4">
-            <form action="/action_page.php" class="form-container">
+            <form action="popup4.php" method="post" class="form-container">
               <img src="c7.jpg" alt="" height="200px" width="200px" >
           
               <div style="text-align: center;">
@@ -215,7 +241,7 @@
           </div>
 
           <div class="form-popup" id="myForm5">
-            <form action="/action_page.php" class="form-container">
+            <form action="popup5.php" method="post" class="form-container">
               <img src="c15.jpeg" alt="" height="200px" width="200px" >
              
               <div style="text-align: center;">
@@ -229,7 +255,7 @@
           </div>
 
           <div class="form-popup" id="myForm6">
-            <form action="/action_page.php" class="form-container">
+            <form action="popup6.php" method="post" class="form-container">
               <img src="c14.jpeg" alt="" height="200px" width="200px" >
            
               <div style="text-align: center;">
@@ -241,7 +267,48 @@
               <button type="button" class="btn cancel" onclick="closeForm6()">Back</button>
             </form>
           </div>
+       
+         <br>
+                          <div>
+                            <table>
+                              <tr>
+                                  <td class="td5" >
+                                    <h1>
+                                      Thank You for Voting!
+                                     </h1>
+                                     <p >
+                                      Your vote is essential in helping us discover the next singing sensation. 
+                                      Every vote brings a contestant one step closer to their dreams. Stay tuned for the results and be sure to share the excitement with your friends and family.
+                                     </p>
+                                     <br><br>
+                                     <p >
+                                      Remember, your voice matters. Thank you for being a part of this incredible journey and supporting our talented performers! </p>
+                           
+                                  
+                                    </td>
+                                  <td class="td6" >
+                                      <img src="../homepage/ab2.jpg" width="100%" alt="" >
+                                  </td>
+                              </tr>
+                          </table>
+<br><br><br>
+                           <div class="conclusion" style="text-align: center;">
 
+
+                          <h1>
+                            Who Will Be the Next Star?
+                           </h1>
+                           <p >
+                            Stay tuned to find out who will take the crown and become the ultimate singing sensation!
+                           </p>
+                           <a href="../Results page/results.php"><button class="btn8">view current standings!</button></a>
+                           <br><br><br><br><br><br><br><br>
+                                    
+                        </div>
+   </div>
+</div>
+
+</div>
           
       </div>
     

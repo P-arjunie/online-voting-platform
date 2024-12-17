@@ -6,41 +6,24 @@ const confirmPasswordInput = document.getElementById('confirm-password');
 const passwordError = document.getElementById('password-error');
 const confirmPasswordError = document.getElementById('confirm-password-error');
 
-// Add event listener to the form on submit
-form.addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent form submission
-
-  // Get the values entered by the user
-  const username = usernameInput.value;
-  const password = passwordInput.value;
-  const confirmPassword = confirmPasswordInput.value;
-
-  // Reset error messages
-  passwordError.textContent = '';
-  confirmPasswordError.textContent = '';
-
-  // Perform validation
-  if (username.trim() === '') {
-    alert('Please enter a username');
-    return;
-  }
-
-  if (password.trim() === '') {
-    passwordError.textContent = 'Please enter a password';
-    return;
-  }
-
-  if (confirmPassword.trim() === '') {
-    confirmPasswordError.textContent = 'Please confirm the password';
-    return;
-  }
-
-  if (password !== confirmPassword) {
-    confirmPasswordError.textContent = 'Passwords do not match';
-    return;
-  }
-
-  // If validation passes, proceed with form submission
-  // You can replace the alert below with your desired logic
-  alert('Registration successful');
-});
+  // Get the password and confirm password fields
+  var passwordField = document.getElementById('test-password');
+  var confirmPasswordField = document.getElementById('test-confirm-password');
+  
+  // Get the error message element
+  var errorMessage = document.getElementById('error');
+  
+  // Add an event listener to the confirm password field
+  confirmPasswordField.addEventListener('keyup', function() {
+    var password = passwordField.value;
+    var confirmPassword = confirmPasswordField.value;
+  
+    // Check if the passwords match
+    if (test-password === test-confirm-password) {
+      // Passwords match, clear the error message
+      errorMessage.innerHTML = '';
+    } else {
+      // Passwords don't match, display an error message
+      errorMessage.innerHTML = 'Passwords do not match';
+    }
+  });

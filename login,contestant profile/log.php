@@ -1,3 +1,12 @@
+<?php
+if (isset($_POST['signup-button'])) {
+    // Perform any necessary actions or validations before redirecting
+    
+    // Redirect to the desired page
+    header("Location: new_page.php");
+    exit(); // Make sure to exit the script after the redirect
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,16 +37,16 @@
         <div id="navbar" style="font-family: Arial, Helvetica, sans-serif;">
             <table width="100%">
                 <tr>
-                <td class="td1"><a href="#home"> <b>HOME</b></a></td>
-                <td class="td1"> <a href="#news"><b>CONTACT US</b></a></td>
+                <td class="td1"><a href="../homepage/homepage.html"> <b>HOME</b></a></td>
+                <td class="td1"> <a href="../contactus,faq,vote/finalcontactus.html"><b>CONTACT US</b></a></td>
                 <td class="td1">
                     <div class="dropdown">
                         <button class="dropbtn"><b>ACCOUNTS</b></button>
                     <div class="dropdown-content">
                     <ul>
-                       <li><a href="#">Contestant</a></li>
-                       <li><a href="#">My Profile</a></li>
-                       <li><a href="#">Admin</a></li>
+                       <li><a href="../login,contestant profile/contestant profile .html">Contestant</a></li>
+                       <li><a href="../user account,rules & regulations/user account.php">My Profile</a></li>
+                       <li><a href="../Admin acc/admin.php">Admin</a></li>
                     </ul>
                     </div>
                     </div> 
@@ -47,11 +56,11 @@
                         <button class="dropbtn"><b>MORE</b></button>
                         <div class="dropdown-content">
                             <ul>
-                                <li><a href="">Vote now!</a></li>
-                                <li><a href="#">View Results</a></li>
-                                <li><a href="#">FAQ's</a></li>
-                                <li><a href="#">Rules and Regulations</a></li>
-                                <li><a href="">What's next?</a></li>
+                                <li><a href="../contactus,faq,vote/finalvote.html">Vote now!</a></li>
+                                <li><a href="../Results page/results.php">View Results</a></li>
+                                <li><a href="../contactus,faq,vote/finalfaq.html">FAQ's</a></li>
+                                <li><a href="../user account,rules & regulations/rules.html">Rules and Regulations</a></li>
+                                <li><a href="../registration,time schedule/Time shedule.html">What's next?</a></li>
                             </ul>
                         </div>
                     </div> 
@@ -82,26 +91,61 @@
 
 <div class="allContent">
 
-<table width="100%" border="1"><tr><td>
-    <div class="container">
-        <h1>Log in</h1>
-        <input type="email" id="email" placeholder="Username"><br><br>
-        <input type="password" id="password" placeholder="Password"><br><br>
-        <div class="remember-me">
-            <input type="checkbox" id="remember" name="remember">
-            <label for="remember">Remember me &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
-            <a class="forgot-password" href="#">Forgot my password</a>
-        </div>
-        <button class="login-button">Log in</button>
-        <p>Still don't have an account? <button class="signup-button">Sign up</button></p>
-        <div class="terms-privacy">
-            <a href="#">Terms & Conditions</a> | <a href="#">Privacy</a>
-        </div>
-    </div></td><td class="sel">
-    <div class="container1">
-        <p>Our Online Voting System for Reality Shows allows viewers to securely vote for their favorite contestants, influencing the cast and crew of popular reality shows.<br><br>
-            <div class="sign"> Sign in now! <br><br>let your voice be heard.</div></p>
-    </div></td></tr></table>
+    <table width="100%" border="1">
+        <tr>
+          <td>
+            <div class="container">
+              <form data-jsv-form="true" data-jsv-submit-handler="customSubmitHandler"
+                data-jsv-disable-icons="false" data-jsv-disable-invalid="true"
+                data-jsv-form-valid-callback="formValidCallback" data-jsv-form-invalid-callback="formInvalidCallback"
+                data-jsv-form-invalid-message="Please correct the errors below"
+                data-jsv-form-incomplete-tooltip="Please complete all fields"
+                method="post" action="login.php">
+                <h1>Log in</h1>
+                <input type="text" style="width: 410px; height: 26px;" id="username" name="username"
+                  placeholder="User Name"><br><br>
+                <input type="password" id="password" name="password" placeholder="Password"><br><br>
+                <div class="remember-me">
+                  <input type="checkbox" id="remember" name="remember">
+                  <label for="remember">Remember me</label>
+                  <a class="forgot-password" href="#">Forgot my password</a>
+                </div>
+                <button type="submit" id="loginButton" class="login-button">Log in</button>
+                </form>
+                <p>Still don't have an account? <button id="signupButton" class="signup-button" name="signup-button">Sign up</button></p>
+                <div class="terms-privacy">
+                  <a href="#">Terms & Conditions</a> | <a href="#">Privacy</a>
+                </div>
+              
+            </div>
+          </td>
+          <td class="sel">
+            <div class="container1">
+              <p>Our Online Voting System for Reality Shows allows viewers to securely vote for their favorite
+                contestants, influencing the cast and crew of popular reality shows.<br><br>
+                <div class="sign"> Sign in now! <br><br>let your voice be heard.</div>
+              </p>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <script>
+        // Get the username input element
+        function handleSignUp(event) {
+          window.location.href = "../registration,time%20schedule/Registration%20form.html";
+       
+      }
+      signupButton.addEventListener('click', handleSignUp);
+      </script>
+      <script>
+        // Get the username input element
+        function handleLogin(event) {
+        var usernameInput = document.getElementById('username');
+        localStorage.setItem('username', usernameInput.value);
+       
+      }
+        loginButton.addEventListener('click', handleLogin);
+      </script>
 </div>
 
 <footer>

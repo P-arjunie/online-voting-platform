@@ -5,6 +5,7 @@ body {
 
 .container ,.container1{
     width: 500px;
+    
     margin: 100px auto;
     background-color: #fff;
     padding: 20px;
@@ -13,13 +14,24 @@ body {
 }
 .container1{
     text-align: justify;
+    width: 500px;
+    height: 350px;
+    background-image: url("people.jpg");
+}
+.our{
+    font-size: 20px;
+  color: rgb(192, 168, 214);
 }
 .sign{
     text-align: center;
     font-size: large;
+    font-size: 28px;
+  color: rgb(239, 236, 241);
 }
 .sel{
     padding-left: 30px;
+    font-size: 28px;
+  color: rgb(239, 236, 241);
 }
 
 h1 {
@@ -44,7 +56,7 @@ input[type="password"] {
     font-size: 13px;
     display: flex;
     align-items: left;
-    justify-content:;
+    justify-content:center;
 }
 
 

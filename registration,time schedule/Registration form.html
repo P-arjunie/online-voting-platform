@@ -11,7 +11,7 @@
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="Registration form.css">
-    <script src="Registration form.js"></script>
+    <!--<script src="Registration form.js"></script>-->
 </head>
     <header>
         <table style="width: 100%;">
@@ -37,8 +37,8 @@
                     <div class="dropdown-content">
                     <ul>
                        <li><a href="../login,contestant profile/contestant profile .html">Contestant</a></li>
-                       <li><a href="../user account,rules & regulations/user account.html">My Profile</a></li>
-                       <li><a href="../Admin acc/admin.html">Admin</a></li>
+                       <li><a href="../user account,rules & regulations/user account.php">My Profile</a></li>
+                       <li><a href="../Admin acc/admin.php">Admin</a></li>
                     </ul>
                     </div>
                     </div> 
@@ -49,7 +49,7 @@
                         <div class="dropdown-content">
                             <ul>
                                 <li><a href="../contactus,faq,vote/finalvote.html">Vote now!</a></li>
-                                <li><a href="../Results page/results.html">View Results</a></li>
+                                <li><a href="../Results page/results.php">View Results</a></li>
                                 <li><a href="../contactus,faq,vote/finalfaq.html">FAQ's</a></li>
                                 <li><a href="../user account,rules & regulations/rules.html">Rules and Regulations</a></li>
                                 <li><a href="../registration,time schedule/Time shedule.html">What's next?</a></li>
@@ -85,16 +85,12 @@
                 <tr>
                     <td>
                         <div id="form-container" class="container">
-                            <form
-                                id = "registration-form"
-                                data-jsv-form="true"
-                                data-jsv-submit-handler="customSubmitHandler"
-                                data-jsv-disable-icons="false"
-                                data-jsv-disable-invalid="true"
-                                data-jsv-form-valid-callback="formValidCallback"
-                                data-jsv-form-invalid-callback="formInvalidCallback"
-                                data-jsv-form-invalid-message="Please correct the errors below"
-                                data-jsv-form-incomplete-tooltip="Please complete all fields">
+                            <form id="registration-form" data-jsv-form="true" data-jsv-submit-handler="customSubmitHandler"
+                            data-jsv-disable-icons="false" data-jsv-disable-invalid="true"
+                            data-jsv-form-valid-callback="formValidCallback" data-jsv-form-invalid-callback="formInvalidCallback"
+                            data-jsv-form-invalid-message="Please correct the errors below"
+                            data-jsv-form-incomplete-tooltip="Please complete all fields"
+                            method="post" action="Register.php">
 
                                 <fieldset>
                                     <legend>
@@ -102,12 +98,13 @@
                                     </legend>
 
                                     <div class="box">
+                                        
 
                                         <div class="form-group">
                                             <label for="first">Name:</label>
                                             <input
                                                 type="text"
-                                                name="first"
+                                                name="firstName"
                                                 id="first"
                                                 data-jsv-validators="require,length"
                                                 placeholder="First">
@@ -116,7 +113,7 @@
                                                 name="second"
                                                 id="second"
                                                 data-jsv-validators="require,length"
-                                                placeholder="Second">
+                                                placeholder="SecondName">
                                         </div>
 
                                         <br>
@@ -131,7 +128,7 @@
                                         
                                         <label for="gender">Gender:</label>
                                         <select id="gender" name="gender" required class="gender">
-                                            <option value="text">Select</option>
+                                            <option value="">Select</option>
                                             <option value="male">Male</option>
                                             <option value="female">Female</option>
                                         </select>
@@ -142,7 +139,7 @@
                                         <input
                                             type="text"
                                             id="test-email"
-                                            name="Login"
+                                            name="Email"
                                             placeholder="E-Mail Address (yardy@yarr.com)"
                                             class="form-control">
 
@@ -180,24 +177,24 @@
 
                                         <input
                                             type="text"
-                                            id="line2"
-                                            name="line2"
+                                            id="line3"
+                                            name="line3"
                                             placeholder="City">
                                         
                                         <br><br>
                                         
                                         <label for="province">Province:</label>
                                         <select id="province" class="province" name="province" required>
-                                            <option value="text">Province</option>
+                                            <option value="">Province</option>
                                             <option value="Western">Western</option>
                                             <option value="North Western">North Western</option>
-                                            <option value="text">Nothern</option>
-                                            <option value="text">North Central</option>
-                                            <option value="text">Southern</option>
-                                            <option value="text">Eastern</option>
-                                            <option value="text">Uva</option>
-                                            <option value="text">Central</option>
-                                            <option value="text">Sabaragamuwa</option>
+                                            <option value="Nothern">Nothern</option>
+                                            <option value="North Central">North Central</option>
+                                            <option value="Southern">Southern</option>
+                                            <option value="Eastern">Eastern</option>
+                                            <option value="Uva">Uva</option>
+                                            <option value="Central">Central</option>
+                                            <option value="Sabaragamuwa">Sabaragamuwa</option>
                                         </select>
 
                                         <br><br>
@@ -251,12 +248,12 @@
 
                                         <br>
 
-                                        <button type="submit" id="button_f" class="button_f" value="Cancel">
+                                        <button type="submit" id="button" class="button_f" value="Cancel">
                                             Cancel
                                         </button>
 
                                         <button type="submit" id="button_f" class="button_f" value="Cancel">
-                                            Register
+                                            <a href="Confirmation pg.html">Register</a>
                                         </button>
                                     </div>
                                 </fieldset>
@@ -276,7 +273,9 @@
             </table>
 
         </div>
-
+        <script>
+      
+    </script>
         <footer>
             <div class="footer_container">
                 <div class = "footer_row">

@@ -2,9 +2,9 @@
 <html>
 <head>
     <title>Sing-Off voting platform</title>
-    <link rel="stylesheet" href="../header/header.css">
+    <link rel= "stylesheet" href="../header/header.css">
     <link rel="stylesheet" href="../header/footer.css">
-    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="results.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -19,14 +19,13 @@
             <td id="logo_img"><img src="../header/My project-1 (1).png" id = "logo_img"></td>
             <td id="header_text">
             <h1 style="font-size: 50px;">SING-OFF!!</h1>
-            <h2 style="font-size: xx-large;"> Online voting platform
-            </h2>
+            <h2 style="font-size: xx-large;"> Online voting platform</h2>
             </td>
             </tr>
         </div>
         </table>
-    </header>
-    <body>            
+        </header>
+        <body>    
         <div id="navbar" style="font-family: Arial, Helvetica, sans-serif;">
             <table width="100%">
                 <tr>
@@ -58,12 +57,12 @@
                         </div>
                     </div> 
                 </td>
-                <td style="empty-cells:hide; width: 500px;"></td>
-                <td><a href="../login,contestant profile/log.php"><button class="btn3"><b>LOGIN</b></button></a></td>
+                <td style="empty-cells:hide; width: 600px;"></td>
+                <td><i class='far fa-user-circle' style="color: white; font-size: 50px;"></i></td>
                 </tr>
             </table>
         </div>
-
+   
         <script>
             window.onscroll = function() {myFunction()};
 
@@ -80,74 +79,127 @@
         </script>
 
         <div class="allContent">
-            <div class="main-width" style="background-color: black;height: 100%;">
-                
-                <img src="i3.jpg" alt="Notebook" style="width:100%;">
-                <div class="content">
-                    <div class="overlay">
-                  <h1 style="font-size: 50px;">Welcome to the Sing-off voting platform!</h1>
-                  <p style="font-size: 20px;">Join us in this thrilling journey as we discover the next big star! 
-                    Our sing-off competition brings together talented voices from all around, and your vote can make all the difference.</p>
-                    <a href="../contactus,faq,vote/finalvote.html"><button class="btn4">vote now!</button></a><br><br><br><br>
+            <center><h1 class="topic">Final Results of Last Round</h1>
+            <i class="sub">Results of last round held on 03.05.2023</i></center>
+            <br><br><br>
+            <div class="flexbox_container">
+                <div class="card shadow_1"><ul>
+                    <li><img src="2nd.jpeg" class="img2"></li>
+                    <li>2nd Place</li>
+                </ul><div class="over">Hazeena Ahmed</div>
                 </div>
+                <div class="card active"><ul>
+                    <li><img src="1st.jpeg" class="img1"></li>
+                    <li>1st Place</li>
+                </ul><div class="over">Shevin Gomez</div>
                 </div>
-                <br><br>
-                <br><br>
-                <div class="cont2" >
-                    <table style="width: 100%;">
-                        <tr>
-                            <td style="width: 30%; padding-left: 0px;">
-                                <img src="j4.jpg" alt="Notebook" >
-                            </td>
-                            <td style="width: 70%; padding-left: 20px; text-align: center;">
-                                <h1 >
-                                    Introducing Our Esteemed Judge Board
+                <div class="card shadow_2"><ul>
+                    <li><img src="3rd.jpg" class="img3"></li>
+                    <li>3rd Place</li>
+                </ul><div class="over">Anushka Agrawal</div>
+                </div>
 
-                                </h1>
-                                <p style="text-align: center; color: aliceblue; font-size: 20px; padding: 5px;">
-                                    Five famous musicians search for the best voices in America and will mentor these singers to become artists. People will decide which singer will be worthy of the grand prize.
-                                </p>
-                               <table>
-                                <tr>
-                                    <td style="width: 65%;"></td>
-                                    <td>
-                                        <a href="https://www.bing.com/search?FORM=SNAPST&q=The+Sing-Off+Cast&filters=fcid:%22tv.cast%22+pivot:%22a6638dde-81f6-4d7f-99e5-9e0b1acda308%22+sid:%22a6638dde-81f6-4d7f-99e5-9e0b1acda308%22"><button class="btn7">Meet judgeboard</button></a>
-                                    </td>
-                                </tr>
-                               </table>
-                             
-                            </td>
-                        </tr>
-                    </table>
-                   
-                     </div>
-              
-                
-              
-                   <br><br><br><br>
-                   <div class="cont3">
-                    <table>
-                        <tr>
-                            <td class="td5" >
-                               <h1>
-                                Presenting Our Incredible Contestants!
-                               </h1>
-                               <p >
-                                Our talented contestants are ready to dazzle you with their incredible performances. Get to know the voices behind the music and see who’s competing for the top spot!
-                               </p>
-                               <a href="../login,contestant profile/contestant profile .html"><button class="btn8">view contestants</button></a>
-                           
-                            </td>
-                            <td class="td6">
-                                <img src="contestant2.jpg" width="100%" alt="" >
-                            </td>
-                        </tr>
-                    </table>
-                    <br><br><br><br><br><br><br>
-                </div>
-                   </div>   
             </div>
+            <?php
+$conn = new mysqli('localhost', 'root', '', 'votingsystem');
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Query the database for vote counts
+$sql = "SELECT v.CanidateId, f.Name, COUNT(*) AS VoteCount
+FROM vote v
+INNER JOIN finalist_master f ON v.CanidateId = f.Id
+GROUP BY v.CanidateId, f.Name";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    $voteCounts = array(); // Array to store the vote counts
+
+    // Fetch the vote counts into an associative array
+    while ($row = $result->fetch_assoc()) {
+        $candidateId = $row['CanidateId'];
+        $name = $row['Name'];
+        $voteCount = $row['VoteCount'];
+        $voteCounts[$candidateId] = array('name' => $name, 'voteCount' => $voteCount); // Store both name and vote count
+    }
+
+    $conn->close();
+} else {
+    echo "No results found.";
+    $conn->close();
+    exit;
+}
+?>
+            <br><br><br><br>
+            <center class="link">Wanna watch contestants' previous performances!!<br><i class='far fa-hand-point-down'></i>&nbsp;<i class='far fa-hand-point-down'></i><br>
+            <a href="../login,contestant profile/contestant profile .html" class="click">CLICK HERE</a></center>
+
+            <br><br><br><br>
+            <div class="winner">
+            <table width="100%">
+            <tr><td width="40%" class="">
+            <table width="100%" border="1" class="w_table"><caption><h1 class="t_topic">Results Table</h1></caption>
+            <tr>
+            <th>Place</th>
+            <th width="50%">Contestant</th>
+            <th>Number of Votes</th>
+        </tr>
+        <tr class="t_row">
+            <td>1</td>
+            <td><?php echo htmlspecialchars($voteCounts[1]['name']); ?></td>
+            <td><?php echo isset($voteCounts[1]) ? $voteCounts[1]['voteCount'] : 0; ?></td>
+        </tr>
+        <tr class="t_row">
+            <td>2</td>
+            <td><?php echo htmlspecialchars($voteCounts[2]['name']); ?></td>
+            <td><?php echo isset($voteCounts[2]) ? $voteCounts[2]['voteCount'] : 0; ?></td>
+        </tr>
+        <tr class="t_row">
+            <td>3</td>
+            <td><?php echo htmlspecialchars($voteCounts[3]['name']); ?></td>
+            <td><?php echo isset($voteCounts[3]) ? $voteCounts[3]['voteCount'] : 0; ?></td>
+        </tr>
+        <tr class="t_row">
+            <td>4</td>
+            <td><?php echo htmlspecialchars($voteCounts[4]['name']); ?></td>
+            <td><?php echo isset($voteCounts[4]) ? $voteCounts[4]['voteCount'] : 0; ?></td>
+        </tr>
+        <tr class="t_row">
+            <td>5</td>
+            <td><?php echo htmlspecialchars($voteCounts[5]['name']); ?></td>
+            <td><?php echo isset($voteCounts[5]) ? $voteCounts[5]['voteCount'] : 0; ?></td>
+        </tr>
+        <tr class="t_row">
+            <td>6</td>
+            <td><?php echo htmlspecialchars($voteCounts[6]['name']); ?></td>
+            <td><?php echo isset($voteCounts[6]) ? $voteCounts[6]['voteCount'] : 0; ?></td>
+        </tr>
+            </table>
+            </td>
+            <td>
+            <table width="100%">
+            <div>
+            <tr><td class="announce">
+                <div class="v_container">
+                <video width="550" height="420" controls>
+                    <source src="d-GKNxBeHBulsyb3.mp4" type="video/mp4">
+                </video>
+                <div class="overlay">
+                   <h2> Winner Performance<br><br></h2>
+                </div>
+                </div>
+            </td></tr>
+            </div>
+            </table>
+            </td>
+            </tr>
+            </table>
+            </div>
+            
         </div>
+
         <footer>
             <div class="footer_container">
                 <div class = "footer_row">

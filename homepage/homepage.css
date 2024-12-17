@@ -1,31 +1,110 @@
-.main-width{
-    max-width: 95%;
-    margin: 0 auto;
-}
-.container1{
-    position: relative;
-    width: 100%;
-}
+
 .container1 img{
     width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 30px;
-    position: relative;
+    padding-left: 0px;
 }
-.container1 .btn{
-    position: absolute;
-    top: 78%;
-    left: 65%;
+.content {
+    position: absolute; 
+    bottom: 0; 
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1; 
+    
+    transition: 2s ease;
+    opacity:1;
+    color: white;
+
+   text-align: center;
+    width: 55%;
+    padding-left: 60px;
+   
+  }
+ .cont2 h1{
+
+ }
+ .btn7, .btn8{
     background: transparent;
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+        background-color: blueviolet;
+        color: white;
+        border-radius: 20px;
+        border-color: blueviolet;
+        padding: 10px;
+        text-align: center;
+        
+ }
+ .td5{
+    width: 65%;
+   
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1; 
+    
+    transition: 2s ease;
+    opacity:1;
+    color: white;
+
+   text-align: center;
+
+ }
+ .td5 h1{
+   
+  font-size: 50px;
+  color:white;
+ }
+ .td5 p{
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+ }
+ .td6{
+    width: 35%;
+    padding-right: 0px;
+ }
+ .t6 img{
+    padding-right: 0px;
+ }
+  .btn4{
+    position: absolute;
+    top: 100%;
+    left: 45%;
+    background: transparent;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+        background-color: blueviolet;
+        color: white;
+        border-radius: 20px;
+        border-color: blueviolet;
+        height: 40px;
+        width: 140px;
+        text-align: center;
+      
+  }
+  .btn4:hover, .btn7:hover,.btn8:hover{
     border: 1px solid white;
-    padding: 9px 20px;
-    border-radius: 30px;
-    line-height: 1.4;
-    font-size: 30px;
-    font-weight: 500;
-    margin-left: 150px;
+    color: black;
+    background: white;
+    transition: .4s;
+}
+ 
+.container1 .btn{
+    position: absolute;
+    top: 100%;
+    left: 5%;
+    background: transparent;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+        background-color: blueviolet;
+        color: white;
+        border-radius: 20px;
+        border-color: blueviolet;
+        height: 40px;
+        width: 140px;
+        text-align: center;
 }
 .container1 .btn:hover{
     border: 1px solid white;
@@ -51,7 +130,7 @@
     position: absolute;
     top: 70%;
     right: 40%;
-    background: transparent;
+    background: white;
     color: black;
     border: 1px solid black;
     padding: 9px 20px;
@@ -64,15 +143,18 @@
 }
 .container2 .btn2:hover{
     color: black;
-    background: white;
+    background:pink;
     transition: .4s;
 }
 .container3{
-    height: 450px;
+    height: 300px;
     width: 500px;
     margin-left: 200px;
     margin-top: 100px;
-
+    background-image: url(princess.jpg);
+    object-fit: cover;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
 }
 .parent_con{
     display: flex;
@@ -80,13 +162,15 @@
 h3{
     font-family: 'Mochiy Pop One', sans-serif;
     color: white;
+    font-size: 30px;
 }
 h1{
-    font-size: 44px;
+    font-size: 50px;
     color: white;
 }
 h2{
     font-size: 32px;
+    text-decoration-color: black;
 }
 .text{line-height: 0.7;}
 

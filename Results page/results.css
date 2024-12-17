@@ -39,6 +39,9 @@
   font-weight: bolder;
   text-align: justify;
 }
+.card:hover {
+  box-shadow: 16px 16px 16px 0 rgba(0,0,0,0.2);
+}
 .active {
   background: linear-gradient(
     135deg,
@@ -50,10 +53,37 @@
   align-items: center;
   transform: scale(1.1);
 }
-.shadow {
+.shadow_1, .shadow_2 {
   box-shadow: -5px 5px 15px 1px rgba(0, 0, 0, 0.1);
 } 
-
+.over{
+  display: none;
+}
+.shadow_1 :hover + .over {
+  display: block;
+  background: black;
+  color: #f1f1f1; 
+  transition: 2s ease;
+  font-size: xx-large;
+  text-align: center;
+}
+.shadow_2 :hover + .over {
+  display: block;
+  background: black;
+  color: #f1f1f1; 
+  transition: 2s ease;
+  font-size: xx-large;
+  text-align: center;
+}
+.active :hover + .over {
+  display: block;
+  background: pink;
+  color: black; 
+  transition: 2s ease;
+  font-size: xx-large;
+  left: 20%;
+  position: absolute;
+}
 .w_table{
 border: 1px;
 border-collapse: collapse;
@@ -99,4 +129,11 @@ th{
 }
 video{
   box-shadow: #1a1b47;
+}
+.link{
+  font-size: 40px;
+  font-weight: bold;
+}
+.click{
+  color: #832b47;
 }
